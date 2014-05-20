@@ -29,27 +29,21 @@ $ git clone https://github.com/franklinkim/veewee.git
 $ cd veewee
 ```
 
-Check and edit the `Gemfile` for newer versions:
-
-```
-ruby "1.9.3"
-source "https://rubygems.org"
-
-gem 'vagrant', "1.0.7"
-gem 'veewee', "0.3.12"
-gem 'virtualbox', "0.9.2"
-```
-
 Run `bundle` to install dependencies run:
 
 ```
 $ bundle install
 ```
 
+Check and edit the `Gemfile` for newer versions:
+
+```
+$ bundle outdated
+```
+
 Define your vm with a template:
 
 ```
-
 $ bundle exec veewee vbox define 'ubuntu-12.04.3' 'ubuntu-12.04.3-server-amd64'
 ```
 
@@ -80,7 +74,7 @@ $ bundle exec veewee vbox build 'ubuntu-12.04.3' --workdir=/Users/franklin/Works
 $ bundle exec veewee vbox validate 'ubuntu-12.04.3'
 
 # export
-$ bundle exec vagrant basebox export 'ubuntu-12.04.3'
+$ vagrant package --base 'ubuntu-12.04.3'
 ```
 
 ## Adding the BaseBox
